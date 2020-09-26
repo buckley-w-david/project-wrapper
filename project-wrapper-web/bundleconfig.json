@@ -1,0 +1,30 @@
+[
+    {
+        "id": "js:site",
+        "localOutputFileName": "wwwroot/js/wrapper.js",
+        "outputFileName": "wwwroot/js/wrapper.min.js",
+        "inputFiles": [
+            "scripts/wrapper.js"
+        ]
+    },
+    {
+        "id": "scss:site",
+        "localOutputFileName": "wwwroot/css/wrapper.css",
+        "outputFileName": "wwwroot/css/wrapper.min.css",
+        "inputFiles": [
+            "styles/wrapper.scss"
+        ]
+    },
+    {
+        "id": "html:site",
+        "outputFileName": "wwwroot/index.html",
+        "localOutputFileName": "wwwroot/index.html",
+        "outputJSFileName": "wrapper.min.js",
+        "outputCSSFileName": "wrapper.min.css",
+        "localOutputJSFileName": "wrapper.js",
+        "localOutputCSSFileName": "wrapper.css",
+        "inputFiles": [
+            "pages/index.html"
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+{
+    http_port 8081
+    https_port 8082
+}
+
+
+localhost {
+    reverse_proxy /api 127.0.0.1:9000
+    root * project-wrapper-web/wwwroot
+    file_server
+}

@@ -1,0 +1,35 @@
+.project-wrapper {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2.25rem;
+
+    .output-image {
+        display: none;
+    }
+
+    .output-image.display {
+        display: flex;
+        
+        > div {
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+
+            svg {
+                display: none;
+            }
+
+            .loading {
+                width: 100px;
+                height: 100px;
+                margin: auto;
+                display:inline-block;
+            }
+
+            img:not([src]) {
+                display: none;
+            }
+        }
+    }
+
+}
