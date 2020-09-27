@@ -3,8 +3,17 @@ const CONSTANTS = {
 }
 
 document.getElementById("colour-sort-upload").addEventListener("change", (e) => {
-    upload(e.target, CONSTANTS.apiUrl);
-    handleFileSelect(e);
+    handleFileSelect(e)
+})
+
+document.getElementById("colour-sort-convert").addEventListener("click", (e) => {
+    const fileSelect = document.getElementById('colour-sort-upload')
+    upload(fileSelect, `${CONSTANTS.apiUrl}/colour-sort/`);
+})
+
+document.getElementById("colour-sort-verify").addEventListener("click", (e) => {
+    const fileSelect = document.getElementById('colour-sort-upload')
+    upload(fileSelect, `${CONSTANTS.apiUrl}/colour-sort/verify`);
 })
 
 // const axios = require('axios');

@@ -1,6 +1,4 @@
 {
-    http_port 8081
-    https_port 8082
     # Optional email key for lets encrypt
     email david@davidbuckley.ca
     # Optional staging lets encrypt for testing. Comment out for production.
@@ -10,7 +8,8 @@
 project-wrapper.davidbuckley.ca {
     log
     # Mkcert - https://github.com/FiloSottile/mkcert
-    tls ./certs/project-wrapper.davidbuckley.ca+3.pem ./certs/project-wrapper.davidbuckley.ca+3-key.pem 
+    # For running docker-compose locally
+    # tls /root/certs/project-wrapper.davidbuckley.ca.pem /root/certs/project-wrapper.davidbuckley.ca-key.pem 
 
     @api {
         path /api
@@ -22,6 +21,6 @@ project-wrapper.davidbuckley.ca {
         reverse_proxy wrapper-api:9000
     }
 
-    root * ./project-wrapper-web/wwwroot/
+    root * /var/www/project-wrapper
     file_server
 }

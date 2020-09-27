@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+  web:
+    external: true
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs/prod:/root/certs
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./project-wrapper-web/wwwroot:/var/www/project-wrapper
+    networks:
+      - web
+  wrapper-api:
+    image: 11dc9b0c026f
+    restart: unless-stopped
+    networks:
+      - web
